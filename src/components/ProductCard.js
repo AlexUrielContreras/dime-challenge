@@ -1,20 +1,24 @@
 import BundleButton from './BundleButton';
 
-import { useQuery } from '@apollo/client';
-import { QUERY_PRODUCT } from '../service/queries';
-
-function ProductCard() {
-    const {data, loading, error} = useQuery(QUERY_PRODUCT);
+function ProductCard({ title, featuredImage, variants }) {
     
-    if (loading) return "Loading...";
-    if (error) return <pre>{error.message}</pre>
-
-    console.log(data)
+    const price = variants.nodes[0].priceV2.amount
 
     return (
         <div className='product-card'>
-            <div></div>
-            <BundleButton />
+            <div>
+                <img src={featuredImage.url} alt='beauty products'/>
+            </div>
+
+            <div>
+                {title}
+            </div>
+
+            <div> 
+                ${Math.floor(price)}
+            </div>
+
+            <BundleButton text={`Add to Bundle`}/>
         </div>
     )
 };

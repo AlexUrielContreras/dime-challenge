@@ -47,17 +47,22 @@ html, body {
   display: grid;
   grid-template-columns: 1fr 1fr;
   justify-items: center;
-  row-gap: 2rem;
-  margin-top: 1.8vh;
+  row-gap: 1.7rem;
+  margin-top: 1.9vh;
   text-align: center;
+  padding: 0 3vw;
 }
 .product-grid .product-card {
   min-height: 322px;
-  min-width: 175px;
-  border-radius: 1rem;
-  background-color: lightgrey;
+  max-width: 175px;
+  border-radius: 0.8rem;
+  box-shadow: 2px 3px 10px rgb(185, 183, 183);
 }
-.product-grid .atb-btn {
+.product-grid .product-card img {
+  max-width: 100%;
+  border-radius: 0.8rem 0.8rem 0 0;
+}
+.product-grid .product-card .atb-btn {
   padding: 0.6rem 0;
   min-width: 85%;
   background-color: rgb(54, 48, 48);

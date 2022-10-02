@@ -1,6 +1,6 @@
-function BundleButton() {
+function BundleButton({text}) {
     return (
-        <button className='atb-btn'>Add to Bundle</button>
+        <button className='atb-btn'>{text}</button>
     )
 };
 
