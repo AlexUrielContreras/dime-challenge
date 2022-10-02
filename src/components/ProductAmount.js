@@ -1,11 +1,14 @@
+import { useRef, useEffect, useState } from 'react';
 
-function ProductAmount() {
+function ProductAmount(props) {
+    const { price } = props;
+    const prevPrice = useRef(0);
+    useEffect(() => {
+        prevPrice.current += price
+    })
 
-    let num = 0
-
-    let price = (num / 175) * 100
-
-
+    let bag = prevPrice.current + price
+    
     return (
         <div className='discount-container'>
             <div className='discount-title'>
@@ -14,15 +17,15 @@ function ProductAmount() {
             <div className='price-container'>
                 <div className='bdl-price'>
                     <p>Bundle Price</p>
-                    <p>$0</p>
+                    <p>${bag}</p>
                 </div>
                 <div className='bdl-saving'>
                     <p>Your Savings</p>
-                    <p>$0</p>
+                    <p>${0}</p>
                 </div>
             </div>
             <div className='pb'>
-                <div className='inside-pb' style={{ width: `${price}%` }}></div>
+                <div className='inside-pb' style={{ width: `${(bag/175) * 100}%` }}></div>
             </div>
         </div>
     )

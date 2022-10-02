@@ -1,11 +1,10 @@
-import BundleButton from './BundleButton';
-
-
-function ProductCard({ title, featuredImage, variants }) {
+function ProductCard({ title, featuredImage, variants, setPrice }) {
 
     const price = variants.nodes[0].priceV2.amount;
 
-    const numOfReview = [7, 146, 25, 184];
+    const grabPrice = (e) => {
+      setPrice(Math.floor(e.target.dataset.price))  
+    }
 
     return (
         <div className='product-card'>
@@ -24,7 +23,7 @@ function ProductCard({ title, featuredImage, variants }) {
                     ${Math.floor(price)}
                 </p>
          
-                <BundleButton text={`Add to Bundle`}/>
+                <button className='atb-btn' onClick={grabPrice} data-price={price}>Add to Bundle</button>
             </div>
         </div>
     )
