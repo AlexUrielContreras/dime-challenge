@@ -2,6 +2,7 @@ import { ApolloProvider, ApolloClient, InMemoryCache} from '@apollo/client';
 
 // imported pages
 import Placeholder from './pages/Placeholder';
+import ProductAmount from './components/ProductAmount';
 
 // Shopify graphql api endpoint using .env variables
 const client = new ApolloClient({
@@ -25,6 +26,10 @@ function App() {
       <main>
         <Placeholder />
       </main>
+
+      <section>
+        <ProductAmount />
+      </section>
       
     </ApolloProvider>
   );

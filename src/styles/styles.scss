@@ -1,3 +1,4 @@
+/*    EXTENDS   */
 %back-arrow {
     position: absolute;
     left: 7%;
@@ -8,11 +9,14 @@
     cursor: pointer;
 }
 
+/*   VARIABLES   */    
+$border-radius: 1.4rem;
+
 *, *::before, *::after {
     box-sizing: border-box;
     margin: 0;
     padding: 0
-};
+}
 
 html, body {
     min-height: 100%;
@@ -20,7 +24,7 @@ html, body {
 }
 
 .main-header {
-    min-height: 8vh;
+    min-height: 6vh;
     background-color: rgb(235, 233, 233);
     display: flex;
     justify-content: center;
@@ -31,20 +35,19 @@ html, body {
         font-size: 1.25rem;
         margin-bottom: 1.4vh;
         letter-spacing: 1px;
-       
     }
 
     .back-arrow::before {
         content: ' ';
         @extend %back-arrow;
-        bottom: 38%;
+        bottom: 50%;
         transform: rotate(-39deg);
     }
       
     .back-arrow::after {
         content: ' ';
         @extend %back-arrow;
-        bottom: 23%;
+        bottom: 30%;
         transform: rotate(39deg);
     }
       
@@ -81,6 +84,21 @@ html, body {
                 font-size: 1rem;
                 margin: 1vh 0
             }
+
+            .product-review {
+                font-size: .8rem;
+                margin: .3rem 0;
+                display: flex;
+                align-items: end;
+
+                .review-stars {
+                   font-size: 125%
+                }
+
+                p {
+                    margin-left: 1vw
+                }
+            }
         }
 
         .atb-btn {
@@ -96,4 +114,65 @@ html, body {
         }
     }
 
+}
+
+.discount-container {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    min-width: 100vw;
+    min-height: 22vh;
+    background-color: rgb(235, 233, 233);
+    border-radius: $border-radius;
+    
+
+    .discount-title {
+        padding: .8rem;
+        color: white;
+        background-color: rgb(54, 48, 48);
+        font-size: 1.1rem;
+        letter-spacing: .5px;
+        border-radius: $border-radius $border-radius 0 0; 
+        text-align: center;
+        
+    }
+
+    .price-container {
+        padding: 2vh 7vw;
+        display: flex;
+        justify-content: space-between;
+
+        .bdl-price {
+             
+            p {
+                font-size: 1.2rem
+            }
+        }
+
+        .bdl-saving {
+
+            p {
+                font-size: 1.2rem;
+                text-align: right
+            }
+        }
+
+    }
+
+    .pb {
+        margin: 0 auto;
+        border-radius: $border-radius;
+        height: 1.5rem;
+        max-width: 87%;
+        background-color: #fed9b7;
+        overflow: hidden;
+
+        .inside-pb {
+            height: 100%;
+            background-color: black;
+            border-radius: $border-radius;
+            transition-timing-function: ease-in;
+            transition: 1s
+        }
+    } 
 }
