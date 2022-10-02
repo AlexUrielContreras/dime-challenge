@@ -16,6 +16,7 @@
 
 html, body {
   min-height: 100%;
+  font-family: "Inter Tight", sans-serif;
 }
 
 .main-header {
@@ -25,20 +26,45 @@ html, body {
   justify-content: center;
   align-items: flex-end;
   position: relative;
-  font-family: "Inter Tight", sans-serif;
 }
 .main-header .page-label {
   font-size: 1.25rem;
-  margin-bottom: 1.2vh;
+  margin-bottom: 1.4vh;
   letter-spacing: 1px;
 }
 .main-header .back-arrow::before {
-  content: "";
-  bottom: 30%;
+  content: " ";
+  bottom: 35%;
   transform: rotate(-39deg);
 }
 .main-header .back-arrow::after {
-  content: "";
-  bottom: 18%;
+  content: " ";
+  bottom: 23%;
   transform: rotate(39deg);
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-items: center;
+  row-gap: 2rem;
+  margin-top: 1.8vh;
+  text-align: center;
+}
+.product-grid .product-card {
+  min-height: 322px;
+  min-width: 175px;
+  border-radius: 1rem;
+  background-color: lightgrey;
+}
+.product-grid .atb-btn {
+  padding: 0.6rem 0;
+  min-width: 85%;
+  background-color: rgb(54, 48, 48);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 0.5px;
 }/*# sourceMappingURL=styles.css.map */
