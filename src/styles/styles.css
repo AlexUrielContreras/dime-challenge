@@ -20,7 +20,7 @@ html, body {
 }
 
 .main-header {
-  min-height: 10vh;
+  min-height: 8vh;
   background-color: rgb(235, 233, 233);
   display: flex;
   justify-content: center;
@@ -34,7 +34,7 @@ html, body {
 }
 .main-header .back-arrow::before {
   content: " ";
-  bottom: 35%;
+  bottom: 38%;
   transform: rotate(-39deg);
 }
 .main-header .back-arrow::after {
@@ -49,8 +49,8 @@ html, body {
   justify-items: center;
   row-gap: 1.7rem;
   margin-top: 1.9vh;
-  text-align: center;
   padding: 0 3vw;
+  text-align: center;
 }
 .product-grid .product-card {
   min-height: 322px;
@@ -62,9 +62,20 @@ html, body {
   max-width: 100%;
   border-radius: 0.8rem 0.8rem 0 0;
 }
+.product-grid .product-card .product-info {
+  text-align: start;
+  padding: 0.5rem;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+  font-weight: bold;
+}
+.product-grid .product-card .product-info .product-price {
+  font-size: 1rem;
+  margin: 1vh 0;
+}
 .product-grid .product-card .atb-btn {
   padding: 0.6rem 0;
-  min-width: 85%;
+  min-width: 100%;
   background-color: rgb(54, 48, 48);
   color: white;
   border: none;
