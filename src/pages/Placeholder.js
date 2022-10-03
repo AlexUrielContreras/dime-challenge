@@ -18,15 +18,16 @@ function Placeholder() {
     // array of the product objects and if empty , empty array
     const productData = data?.products.nodes || [];
 
-    const [cartInstance] = useMutation(CREATE_CART, {
-        "X-Shopify-Storefront-Access-Token": process.env.REACT_APP_TOKEN
-    });
+    console.log(productData)
+
+    const [cartInstance] = useMutation(CREATE_CART)
 
     // creates cart on page load
     useEffect(() => {
        createCart(cartInstance);
 
-       return(() => console.log('bye'))
+     // cleanup to reduce memory 
+       return () => console.log('bye')
     }, []);
 
     const [price, setPrice] = useState(0);

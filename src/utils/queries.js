@@ -3,21 +3,24 @@ import { gql } from '@apollo/client';
 
 export const QUERY_PRODUCT = gql`
 {
-	products(first:5) {
-		nodes {
-			id 
-			title
-			featuredImage {
-				url
-			}
-			variants(first:5) {
-				nodes {
-					priceV2 {
-						amount
+	products(first: 5) {
+			edges {
+				node{
+					id 
+					title
+					variants(first: 5) {
+						edges{
+							node {
+								id
+								priceV2 {
+									amount
+								}
+							}
+						}
 					}
-				}
 			}
 		}
 	}
 }
+
 `;
