@@ -9,16 +9,18 @@ import { QUERY_PRODUCT } from '../utils/queries';
 import { useMutation } from '@apollo/client';
 import { CREATE_CART } from '../utils/mutations';
 
+
 import { createCart } from '../services/create-cart'
 
 function Placeholder() {
+    
     // grab products from Storefront api and deconstructs the object
     const {data, loading, error} = useQuery(QUERY_PRODUCT);
 
+    const [cartInstance] = useMutation(CREATE_CART)
+
     // array of the product objects and if empty , empty array
     const productData = data?.products.edges || [];
-
-    const [cartInstance] = useMutation(CREATE_CART)
 
     // creates cart on page load
     useEffect(() => {
@@ -27,8 +29,6 @@ function Placeholder() {
      // cleanup to reduce memory 
        return () => console.log('bye')
     }, []);
-
-    const [price, setPrice] = useState(0);
     
     if (loading) return "Loading...";
     if (error) return <pre>{error.message}</pre>;
@@ -37,11 +37,11 @@ function Placeholder() {
         <>
             <section className='product-grid'>
                 {productData.map(info => (
-                    <ProductCard key={info.node.title} {...info} setPrice={setPrice}/>
+                    <ProductCard key={info.node.title} {...info} />
                 ))}
             </section>
             <section>
-                <ProductAmount price={price}/>
+                <ProductAmount />
             </section>
         </>
     )

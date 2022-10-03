@@ -1,14 +1,23 @@
 import { useRef, useEffect, useState } from 'react';
 
-function ProductAmount({ price }) {
-    const prevPrice = useRef(0);
-    
-    useEffect(() => {
-        prevPrice.current += price
-    })
+import { useQuery } from '@apollo/client';
+import { QUERY_CART } from '../utils/queries';
 
-    let bag = prevPrice.current + price
+const ProductAmount = () => {
+
+    let { data, loading, error, refetch } = useQuery(QUERY_CART, {
+        variables: { id: localStorage.getItem('cartId') },
+    });
+
+    console.log(data)
     
+    let cartPrice;
+
+    if (!loading) {
+       cartPrice = Math.floor(data?.cart.cost.checkoutChargeAmount.amount)
+    }
+
+
     return (
         <div className='discount-container'>
             <div className='discount-title'>
@@ -17,15 +26,15 @@ function ProductAmount({ price }) {
             <div className='price-container'>
                 <div className='bdl-price'>
                     <p>Bundle Price</p>
-                    <p>${bag}</p>
+                    <p>${cartPrice}</p>
                 </div>
                 <div className='bdl-saving'>
                     <p>Your Savings</p>
-                    <p>${0}</p>
+                    <p>$0</p>
                 </div>
             </div>
             <div className='pb'>
-                <div className='inside-pb' style={{ width: `${(bag/175) * 100}%` }}></div>
+                <div className='inside-pb' style={{ width: `${(cartPrice/175) * 100}%` }}></div>
             </div>
         </div>
     )

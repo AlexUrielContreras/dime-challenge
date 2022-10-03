@@ -3,7 +3,7 @@ import { ADD_TO_CART } from '../utils/mutations';
 
 
 
-function ProductCard({node, setPrice }) {
+function ProductCard({node}) {
 
     const { title, featuredImage, variants } = node
     const [addToCart] = useMutation(ADD_TO_CART);
