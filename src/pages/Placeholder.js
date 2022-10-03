@@ -16,9 +16,7 @@ function Placeholder() {
     const {data, loading, error} = useQuery(QUERY_PRODUCT);
 
     // array of the product objects and if empty , empty array
-    const productData = data?.products.nodes || [];
-
-    console.log(productData)
+    const productData = data?.products.edges || [];
 
     const [cartInstance] = useMutation(CREATE_CART)
 
@@ -39,7 +37,7 @@ function Placeholder() {
         <>
             <section className='product-grid'>
                 {productData.map(info => (
-                    <ProductCard key={info.title} {...info} setPrice={setPrice}/>
+                    <ProductCard key={info.node.title} {...info} setPrice={setPrice}/>
                 ))}
             </section>
             <section>

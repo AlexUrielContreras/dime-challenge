@@ -8,6 +8,9 @@ export const QUERY_PRODUCT = gql`
 				node{
 					id 
 					title
+					featuredImage {
+						url
+					}
 					variants(first: 5) {
 						edges{
 							node {
@@ -23,4 +26,16 @@ export const QUERY_PRODUCT = gql`
 	}
 }
 
+`;
+
+export const QUERY_CART = gql`
+	query cart($id: ID!) {
+		cart(id: $id) {
+			cost {
+				checkoutChargeAmount {
+					amount
+				}
+			}
+		}
+	}
 `;

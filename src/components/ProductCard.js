@@ -1,6 +1,7 @@
-function ProductCard({ title, featuredImage, variants, setPrice }) {
-
-    const price = variants.nodes[0].priceV2.amount;
+function ProductCard({ node, setPrice }) {
+    const { title, featuredImage, variants } = node
+    
+    const price = variants.edges[0].node.priceV2.amount;
 
     const grabPrice = (e) => {
       setPrice(Math.floor(e.target.dataset.price))  
