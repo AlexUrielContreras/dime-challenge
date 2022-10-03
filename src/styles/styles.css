@@ -52,7 +52,6 @@ html, body {
   row-gap: 1.4rem;
   margin-top: 1.9vh;
   padding: 0 3vw;
-  text-align: center;
 }
 .product-grid .product-card {
   min-height: 200px;
@@ -65,7 +64,6 @@ html, body {
   border-radius: 0.8rem 0.8rem 0 0;
 }
 .product-grid .product-card .product-info {
-  text-align: start;
   padding: 0.5rem;
   font-size: 0.86rem;
   letter-spacing: 0.5px;
@@ -92,7 +90,6 @@ html, body {
   border: none;
   border-radius: 6px;
   font-size: 1rem;
-  font-weight: 500;
   letter-spacing: 0.5px;
 }
 

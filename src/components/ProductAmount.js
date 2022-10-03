@@ -8,8 +8,6 @@ const ProductAmount = () => {
         pollInterval: 200
     });
 
-    console.log(data)
-
     let cartPrice = 0;
     let discountedPrice; 
     let savings = 0
@@ -26,9 +24,6 @@ const ProductAmount = () => {
         cartPrice -= savings
     }
     
-
-    console.log(discountedPrice, savings )
-     
     return (
         <div className='discount-container'>
             <div className='discount-title'>

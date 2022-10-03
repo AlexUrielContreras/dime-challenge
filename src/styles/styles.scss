@@ -11,6 +11,7 @@
 
 /*   VARIABLES   */    
 $border-radius: 1.4rem;
+$font-family: 'Manrope', sans-serif;
 
 *, *::before, *::after {
     box-sizing: border-box;
@@ -60,8 +61,7 @@ html, body {
     row-gap: 1.4rem;
     margin-top: 1.9vh;
     padding: 0 3vw;
-    text-align: center;
-
+    
     .product-card {
         min-height: 200px;
         max-width: 175px;
@@ -74,13 +74,11 @@ html, body {
         }
 
         .product-info {
-            text-align: start;
             padding: .5rem;
             font-size: .86rem;
             letter-spacing: .5px;
             font-weight: bold;
-            font-family: 'Manrope', sans-serif;
-
+            font-family: $font-family;
 
             .product-price {
                 font-size: 1rem;
@@ -106,7 +104,6 @@ html, body {
             border: none;
             border-radius: 6px;
             font-size: 1rem;
-            font-weight: 500;
             letter-spacing: .5px;
         }
     }
@@ -120,7 +117,7 @@ html, body {
     min-height: 20vh;
     background-color: rgb(235, 233, 233);
     border-radius: $border-radius;
-    font-family: 'Manrope', sans-serif;
+    font-family: $font-family;
     
     strong {
         font-weight: 600
