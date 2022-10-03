@@ -49,7 +49,7 @@ html, body {
   display: grid;
   grid-template-columns: 1fr 1fr;
   justify-items: center;
-  row-gap: 1.7rem;
+  row-gap: 1.4rem;
   margin-top: 1.9vh;
   padding: 0 3vw;
   text-align: center;
@@ -67,25 +67,19 @@ html, body {
 .product-grid .product-card .product-info {
   text-align: start;
   padding: 0.5rem;
-  font-size: 0.9rem;
+  font-size: 0.86rem;
   letter-spacing: 0.5px;
   font-weight: bold;
+  font-family: "Manrope", sans-serif;
 }
 .product-grid .product-card .product-info .product-price {
   font-size: 1rem;
   margin: 1vh 0;
+  font-weight: 500;
 }
 .product-grid .product-card .product-info .product-review {
-  font-size: 0.8rem;
-  margin: 0.3rem 0;
-  display: flex;
-  align-items: flex-end;
-}
-.product-grid .product-card .product-info .product-review .review-stars {
-  font-size: 125%;
-}
-.product-grid .product-card .product-info .product-review p {
-  margin-left: 1vw;
+  font-size: 120%;
+  margin: 0.6vh 0;
 }
 .product-grid .product-card .atb-btn {
   padding: 0.6rem 0;
@@ -104,12 +98,13 @@ html, body {
   bottom: 0;
   left: 0;
   min-width: 100vw;
-  min-height: 22vh;
+  min-height: 20vh;
   background-color: rgb(235, 233, 233);
   border-radius: 1.4rem;
+  font-family: "Manrope", sans-serif;
 }
 .discount-container .discount-title {
-  padding: 0.8rem;
+  padding: 0.5rem;
   color: white;
   background-color: rgb(54, 48, 48);
   font-size: 1.1rem;
@@ -118,16 +113,22 @@ html, body {
   text-align: center;
 }
 .discount-container .price-container {
-  padding: 2vh 7vw;
+  padding: 1.5vh 7vw;
   display: flex;
   justify-content: space-between;
 }
-.discount-container .price-container .bdl-price p {
-  font-size: 1.2rem;
+.discount-container .price-container .bdl-price {
+  font-size: 1.1rem;
+}
+.discount-container .price-container .bdl-saving {
+  font-size: 1.1rem;
 }
 .discount-container .price-container .bdl-saving p {
-  font-size: 1.2rem;
   text-align: right;
+}
+.discount-container .price-container .amount {
+  font-weight: 600;
+  font-size: 1.3rem;
 }
 .discount-container .pb {
   margin: 0 auto;

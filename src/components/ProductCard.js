@@ -36,11 +36,11 @@ function ProductCard({node}) {
             </div>
 
             <div className='product-info'>
-                <p>
+                <p className='product-name'>
                     {title}
                 </p>
                 <div className='product-review'>
-                   
+                   <span>&#9733;&#9733;&#9733;&#9733;&#9733;</span>
                 </div>
                 <p className='product-price'> 
                     ${Math.floor(price)}

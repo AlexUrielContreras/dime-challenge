@@ -31,6 +31,7 @@ function Placeholder() {
     if (loading) return "Loading...";
     if (error) return <pre>{error.message}</pre>;
     
+    
     return (
         <>
             <section className='product-grid'>

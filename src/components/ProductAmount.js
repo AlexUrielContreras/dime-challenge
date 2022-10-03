@@ -5,7 +5,7 @@ const ProductAmount = () => {
 
     let { data, loading } = useQuery(QUERY_CART, {
         variables: { id: localStorage.getItem('cartId') },
-        pollInterval: 500
+        // pollInterval: 500
     });
 
     console.log(data)
@@ -24,11 +24,11 @@ const ProductAmount = () => {
             <div className='price-container'>
                 <div className='bdl-price'>
                     <p>Bundle Price</p>
-                    <p>${cartPrice}</p>
+                    <p className='amount'>${cartPrice}</p>
                 </div>
                 <div className='bdl-saving'>
                     <p>Your Savings</p>
-                    <p>$0</p>
+                    <p className='amount'>$0</p>
                 </div>
             </div>
             <div className='pb'>
