@@ -1,22 +1,20 @@
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 
 import ProductCard from '../components/ProductCard';
 import ProductAmount from '../components/ProductAmount';
 
-import { useQuery } from '@apollo/client';
+import { useQuery, useMutation } from '@apollo/client';
 import { QUERY_PRODUCT } from '../utils/queries';
 
-import { useMutation } from '@apollo/client';
 import { CREATE_CART } from '../utils/mutations';
-
 
 import { createCart } from '../services/create-cart'
 
 function Placeholder() {
-    
     // grab products from Storefront api and deconstructs the object
     const {data, loading, error} = useQuery(QUERY_PRODUCT);
-
+    
+    // returns a function to excute the graphql mutation
     const [cartInstance] = useMutation(CREATE_CART)
 
     // array of the product objects and if empty , empty array

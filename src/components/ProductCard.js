@@ -1,22 +1,20 @@
 import { useMutation } from '@apollo/client';
 import { ADD_TO_CART } from '../utils/mutations';
 
-
-
 function ProductCard({node}) {
+    const { title, featuredImage, variants } = node;
 
-    const { title, featuredImage, variants } = node
     const [addToCart] = useMutation(ADD_TO_CART);
-    
+
     const price = variants.edges[0].node.priceV2.amount;
     const id = variants.edges[0].node.id
 
-    const grabPrice = async (e) => {
-      
+    const grabPrice = async (e) => {    
         const productId = e.target.dataset.productid
 
         try {
-            const response  = await addToCart({
+
+            await addToCart({
                 variables: {
                     cartId: localStorage.getItem('cartId'),
                     lines: {
@@ -24,7 +22,7 @@ function ProductCard({node}) {
                     },
                 }
             });
-          
+
         } catch (err) {
             console.error(err)
         }
@@ -54,4 +52,4 @@ function ProductCard({node}) {
     )
 };
 
-export default ProductCard;
+export default ProductCard ;

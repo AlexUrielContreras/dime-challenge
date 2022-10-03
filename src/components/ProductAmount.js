@@ -1,23 +1,21 @@
-import { useRef, useEffect, useState } from 'react';
-
 import { useQuery } from '@apollo/client';
 import { QUERY_CART } from '../utils/queries';
 
 const ProductAmount = () => {
 
-    let { data, loading, error, refetch } = useQuery(QUERY_CART, {
+    let { data, loading } = useQuery(QUERY_CART, {
         variables: { id: localStorage.getItem('cartId') },
+        pollInterval: 500
     });
 
     console.log(data)
-    
-    let cartPrice;
+
+    let cartPrice = 0;
 
     if (!loading) {
-       cartPrice = Math.floor(data?.cart.cost.checkoutChargeAmount.amount)
+       cartPrice = Math.floor(data.cart.cost.checkoutChargeAmount.amount)
     }
-
-
+     
     return (
         <div className='discount-container'>
             <div className='discount-title'>
