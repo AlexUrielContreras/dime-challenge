@@ -10,3 +10,19 @@ export const CREATE_CART = gql`
         }
     }
 `;
+
+
+export const ADD_TO_CART = gql` 
+mutation cartLinesAdd($cartId: ID!, $lines: [CartLineInput!]!) {
+	cartLinesAdd(cartId: $cartId, lines: $lines) {
+		cart {
+			cost {
+				checkoutChargeAmount {
+					amount
+				}
+			}
+			totalQuantity
+        }
+	}
+} 
+`;

@@ -1,8 +1,8 @@
 import { useRef, useEffect, useState } from 'react';
 
-function ProductAmount(props) {
-    const { price } = props;
+function ProductAmount({ price }) {
     const prevPrice = useRef(0);
+    
     useEffect(() => {
         prevPrice.current += price
     })

@@ -31,6 +31,7 @@ export const QUERY_PRODUCT = gql`
 export const QUERY_CART = gql`
 	query cart($id: ID!) {
 		cart(id: $id) {
+			totalQuantity
 			cost {
 				checkoutChargeAmount {
 					amount
