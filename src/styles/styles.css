@@ -55,7 +55,7 @@ html, body {
   text-align: center;
 }
 .product-grid .product-card {
-  min-height: 322px;
+  min-height: 200px;
   max-width: 175px;
   border-radius: 0.8rem;
   box-shadow: 2px 3px 10px rgb(185, 183, 183);
@@ -74,12 +74,15 @@ html, body {
 }
 .product-grid .product-card .product-info .product-price {
   font-size: 1rem;
-  margin: 1vh 0;
+  margin: 0.8vh 0;
   font-weight: 500;
 }
 .product-grid .product-card .product-info .product-review {
   font-size: 120%;
   margin: 0.6vh 0;
+}
+.product-grid .product-card .product-info .product-review span {
+  font-size: 0.8rem;
 }
 .product-grid .product-card .atb-btn {
   padding: 0.6rem 0;
@@ -96,12 +99,14 @@ html, body {
 .discount-container {
   position: absolute;
   bottom: 0;
-  left: 0;
-  min-width: 100vw;
+  min-width: 100%;
   min-height: 20vh;
   background-color: rgb(235, 233, 233);
   border-radius: 1.4rem;
   font-family: "Manrope", sans-serif;
+}
+.discount-container strong {
+  font-weight: 600;
 }
 .discount-container .discount-title {
   padding: 0.5rem;
@@ -137,6 +142,7 @@ html, body {
   max-width: 87%;
   background-color: #fed9b7;
   overflow: hidden;
+  position: relative;
 }
 .discount-container .pb .inside-pb {
   height: 100%;
@@ -144,4 +150,46 @@ html, body {
   border-radius: 1.4rem;
   transition-timing-function: ease-in;
   transition: 1s;
+}
+.discount-container .pb span::after, .discount-container .pb span::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  min-height: 100%;
+  min-width: 2px;
+  background-color: black;
+}
+.discount-container .pb .first2::after {
+  position: absolute;
+  right: 47%;
+}
+.discount-container .pb .first2::before {
+  right: 32%;
+}
+.discount-container .pb .last2::after {
+  right: 18%;
+}
+.discount-container .pb .last2::before {
+  right: 5%;
+}
+.discount-container .bar-percent {
+  font-size: 0.9rem;
+}
+.discount-container .bar-percent p {
+  position: absolute;
+  display: flex;
+  bottom: 5%;
+  font-weight: bold;
+}
+.discount-container .bar-percent p:nth-child(1) {
+  right: 45%;
+}
+.discount-container .bar-percent p:nth-child(2) {
+  right: 32%;
+}
+.discount-container .bar-percent p:nth-child(3) {
+  right: 19%;
+}
+.discount-container .bar-percent p:nth-child(4) {
+  right: 8%;
 }/*# sourceMappingURL=styles.css.map */
