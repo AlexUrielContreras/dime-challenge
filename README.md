@@ -16,6 +16,7 @@ Bulit on a iPhone XR viewport - 414 x 896
 ## Installation 
 ```
 git clone https://github.com/AlexUrielContreras/dime-challenge.git
+npm install
 npm start - env file contains api url and access token
 ```
 
